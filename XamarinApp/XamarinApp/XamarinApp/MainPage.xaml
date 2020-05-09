@@ -8,42 +8,7 @@
 
     <ScrollView>
 
-        <Grid>
-
-            <Image Opacity="0.8" Source="universo.jpg" Aspect="AspectFill" />
-
-            <Grid HeightRequest="500" WidthRequest="300" >
-
-
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="20"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="1*"/>
-
-                </Grid.RowDefinitions>
-
-                <Image Source="avatar.png" Grid.Row="1" Grid.Column="1"/>
-                <Entry Grid.Row="3" Grid.Column="1" Placeholder="Usuario"/>
-                <Entry Grid.Row="4" Grid.Column="1" Placeholder="Contraseña"/>
-
-                <Button Opacity="0.7" Text="Login" Grid.Row="5" Grid.Column="1" Clicked="SignIn" BorderColor="#2b3c3c" BorderWidth="1" FontAttributes="Bold" BackgroundColor="#283747" BorderRadius="35" TextColor="White" WidthRequest="160" HeightRequest="70" Margin="0,0,20,22" />
-
-
-            </Grid>
-
-
-
-
-        </Grid>      
+        
 
     </ScrollView>
 

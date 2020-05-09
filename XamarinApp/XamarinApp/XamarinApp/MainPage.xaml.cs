@@ -17,11 +17,6 @@ namespace XamarinApp
         {
             InitializeComponent();
         }
-
-
-        void SignIn(object sender, EventArgs e)
-        {
-            DisplayAlert("Login", "Hola mundo!","ok");
-        }
+      
     }
 }
