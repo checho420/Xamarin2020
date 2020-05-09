@@ -22,7 +22,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
             
             
@@ -54,14 +54,16 @@
                 <Frame HasShadow="True">
                     <StackLayout Spacing="20">
                         <Label Text="LOGIN"  HorizontalOptions="Center"/>
-                        <Entry Placeholder="EMAIL" Keyboard="Email"/>
-                        <Entry Placeholder="PASS" IsPassword="True"/>
+                        <Entry x:Name="txt_email" Placeholder="EMAIL" Keyboard="Email"/>
+                        <Entry x:Name="txt_pass" Placeholder="PASS" IsPassword="True"/>
 
-                        <Button Text="Login" 
+                        <Button 
+                            x:Name="btn_login"
+                            Text="Login" 
                                 BackgroundColor="{StaticResource azul_color}" 
                                 TextColor="{StaticResource gris_claro_color}" 
                                 CornerRadius="50" 
-                                Clicked="Login"/>
+                                Clicked="btn_login_Clicked"/>
                     </StackLayout>                    
                 </Frame>
             </Grid>
