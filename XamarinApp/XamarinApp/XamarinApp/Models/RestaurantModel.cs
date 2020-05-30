@@ -24,5 +24,6 @@ namespace XamarinApp.Models
         public double Longitud { get; set; }
 
         public object Productos { get; set; }
+        public int Calificacion { get; set; }
     }
 }

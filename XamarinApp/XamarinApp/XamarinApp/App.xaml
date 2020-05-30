@@ -4,9 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:converters="clr-namespace:XamarinApp.Converters"
              x:Class="XamarinApp.App">
     <Application.Resources>
         <ResourceDictionary>
+
+            <converters:CalificationToImageConverter x:Key="CalificationToImageConverter" />
+
             <Color x:Key="azul_color">#4468d5</Color>
             <Color x:Key="gris_claro_color">#fdfdfd</Color>
         </ResourceDictionary>

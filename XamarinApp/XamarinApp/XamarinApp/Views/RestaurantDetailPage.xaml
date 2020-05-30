@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="{Binding Item.Nombre}"
+             x:Class="XamarinApp.Views.RestaurantDetailPage">
+    <ContentPage.Content>
+        <StackLayout>            
+
+            <StackLayout Orientation="Vertical">
+                <Frame
+                                    Padding="10"
+                                    CornerRadius="20">
+                    <Image Source="{Binding  Item.Imagen}" HeightRequest="100" WidthRequest="500" Aspect="AspectFill"/>
+                </Frame>
+
+                <StackLayout>
+                    <Label Text="{Binding Item.Nombre}" FontSize="Title"/>
+                    <Label Text="{Binding Item.Direccion}" FontSize="Medium" TextColor="Gray"/>
+                    <Label Text="{Binding Item.Telefono}" FontSize="Small"/>
+                    <Label Text="{Binding Item.Calificacion}" FontSize="Small"/>
+
+                    <Image Source="{Binding Item.Calificacion, Converter={StaticResource CalificationToImageConverter}}"
+                           HorizontalOptions="End"
+                           WidthRequest="40"
+                           HeightRequest="40"
+                           
+                           />
+                </StackLayout>
+
+                <Label Text="Productos populares" FontSize="Subtitle"/>
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Frame
+                        Padding="10"
+                        CornerRadius="20">
+                        <Image Source="{Binding Item.Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>
+                    </Frame>
+                    <Frame
+                        Padding="10"
+                        CornerRadius="20">
+                        <Image Source="{Binding Item.Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>
+                    </Frame>
+                    <Frame
+                        Padding="10"
+                        CornerRadius="20">
+                        <Image Source="{Binding Item.Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>
+                    </Frame>
+
+                </StackLayout>
+                
+                <Label Text="Promo!" FontSize="Subtitle"/>
+
+
+
+                <Grid>
+                    <ListView x:Name="grd_products"
+                  ItemsSource="{Binding Products}" 
+                  HasUnevenRows="true"
+                  IsRefreshing="{Binding IsRefreshing}"
+                  SeparatorVisibility="None">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid BackgroundColor="{StaticResource gris_claro_color}">
+                                        <Frame Margin="7" Padding="0">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame
+                                        Padding="10"
+                                        CornerRadius="20">
+                                                    <Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>
+                                                </Frame>
+
+                                                <StackLayout>
+                                                    <Label Text="{Binding Nombre}" FontSize="Subtitle"/>
+                                                    <Label Text="{Binding Descripcion}" FontSize="Micro" TextColor="Gray"/>
+                                                    <Label Text="{Binding Precio}" FontSize="Small"/>
+
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+
+                    </ListView>
+
+
+                </Grid>
+
+            </StackLayout>
+
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />  
+
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

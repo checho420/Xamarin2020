@@ -30,10 +30,11 @@ namespace XamarinApp.Views
             string email = txt_email.Text;
             string pass = txt_pass.Text;
 
-            if(email =="checho420" && pass == "admin")
-            {
+            if(email =="checho420" && pass == "admin")            {
 
-                await this.Navigation.PushModalAsync(new HomePage());
+                //Autentificacion correcta
+                App.Current.MainPage = new NavigationPage(new HomePage());
+   
                 //this.DisplayAlert("Exito", "usuario o pass correcto", "Aceptar");
             }
             else

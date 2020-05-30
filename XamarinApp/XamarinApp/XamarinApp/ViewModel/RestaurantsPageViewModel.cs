@@ -7,8 +7,21 @@ using XamarinApp.Repositories;
 
 namespace XamarinApp.ViewModel
 {
-    public class RestaurantsPageViewModel
+    public class RestaurantsPageViewModel: BaseViewModel
     {
+        private bool _IsRefreshing;
+
+        public bool IsRefreshing
+        {
+            get { return _IsRefreshing; }
+            set
+            {
+                _IsRefreshing = value;
+                OnPropertyChanged("IsRefreshing");
+            }
+        }
+
+
         public ObservableCollection<RestaurantModel> Restaurantes { get; set; }
 
 
@@ -59,16 +72,20 @@ namespace XamarinApp.ViewModel
            });
            */
 
+              
 
         }
         async private void LoadRestaurants()
         {
+            IsRefreshing = true;
             foreach (var item in await new RestaurantRepository().GetRestaurants())
 
             {
-                Restaurantes.Add(item);
+                Restaurantes.Add(item);                
 
             }
+
+            IsRefreshing = false;
         }
 
 

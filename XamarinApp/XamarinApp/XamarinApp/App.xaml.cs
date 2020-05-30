@@ -26,5 +26,10 @@ namespace XamarinApp
         protected override void OnResume()
         {
         }
+
+        internal static void SetMainPage(HomePage homePage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

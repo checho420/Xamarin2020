@@ -6,28 +6,36 @@
              mc:Ignorable="d"
              x:Class="XamarinApp.Views.RestaurantsPage">
 
+    <Grid>       
 
-    <Grid>
-
-        <ListView ItemsSource="{Binding Restaurantes}" HasUnevenRows="true">
+        <ListView x:Name="grd_restaurants"
+                  ItemSelected="grd_restaurants_ItemSelected"
+                  ItemsSource="{Binding Restaurantes}" 
+                  HasUnevenRows="true"
+                  IsRefreshing="{Binding IsRefreshing}"
+                  SeparatorVisibility="None">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Margin="7" Padding="0">
+                        <Grid BackgroundColor="{StaticResource gris_claro_color}">
+                            <Frame Margin="7" Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame
+                                        Padding="10"
+                                        CornerRadius="20">
+                                        <Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>
+                                    </Frame>
 
-                            <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Imagen}" HeightRequest="100"/>
+                                    <StackLayout>
+                                        <Label Text="{Binding Nombre}" FontSize="Subtitle"/>
+                                        <Label Text="{Binding Direccion}" FontSize="Micro" TextColor="Gray"/>
+                                        <Label Text="{Binding Telefono}" FontSize="Small"/>
 
-                                <StackLayout>
-
-                                    <Label Text="{Binding Nombre}" FontSize="Subtitle"/>
-                                    <Label Text="{Binding Direccion}" FontSize="Micro" TextColor="Gray"/>
-                                    <Label Text="{Binding Telefono}" FontSize="Small"/>
-
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                        </Frame>
+                            </Frame>
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
